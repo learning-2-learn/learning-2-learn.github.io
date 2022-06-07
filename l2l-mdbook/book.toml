@@ -1,0 +1,6 @@
+[book]
+authors = ["Monica Liu"]
+language = "en"
+multilingual = false
+src = "src"
+title = "Learning-2-Learn Documentation"
