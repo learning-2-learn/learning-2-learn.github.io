@@ -16,7 +16,7 @@ jobs:
     - name: Run Build Docker Compose
       run: docker-compose -f docker-compose-build.yaml up
     - name: Add book folder
-      run: git add books -f
+      run: git add book -f
     - name: Create Commit
       run: git commit -m "Update Github Pages"
     - name: Push Commit
