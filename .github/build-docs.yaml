@@ -1,0 +1,17 @@
+name: mdbook build
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+    - main
+jobs:
+  docker_md_build:
+    timeout-minutes: 10
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v1
+    - name: Run Build Docker Compose
+      run: docker-compose -f docker-compose-build.yaml up
