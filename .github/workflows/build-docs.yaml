@@ -13,15 +13,13 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v3
-    # - name: Run Build Docker Compose
-    #   run: docker-compose -f docker-compose-build.yaml up
-    - name: fake build
-      run: mkdir books
+    - name: Run Build Docker Compose
+      run: docker-compose -f docker-compose-build.yaml up
     - uses: actions/checkout@v3
       with:
         ref: pages
     - name: Add book folder
-      run: git add book -f
+      run: git add books -f
     - name: Create Commit
       run: git commit -m "Update Pages"
     - name: Push Commit
