@@ -3,9 +3,6 @@ on:
   push:
     branches:
       - main
-  pull_request:
-    branches:
-    - main
 jobs:
   docker_md_build:
     timeout-minutes: 10
@@ -15,13 +12,16 @@ jobs:
       uses: actions/checkout@v3
     - name: Run Build Docker Compose
       run: docker-compose -f docker-compose-build.yaml up
-    - name: Add book folder
-      run: git add book -f
+    - name: Rename to docs and add it
+      run: |
+        rm -r docs
+        mv book docs
+        git add docs -f
     - name: Configure Github Config
       run: |
         git config --global user.email 'github-actions[bot]@users.noreply.github.com' 
         git config --global user.name 'github-actions[bot]'
     - name: Create Commit
-      run: git commit -m "Update Github Pages"
+      run: git diff-index --quiet HEAD || git commit -m "Update Docs"
     - name: Push Commit
       run: git push
