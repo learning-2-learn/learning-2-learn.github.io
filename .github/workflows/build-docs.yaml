@@ -1,0 +1,27 @@
+name: mdbook build
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+    - main
+jobs:
+  docker_md_build:
+    timeout-minutes: 10
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - name: Run Build Docker Compose
+      run: docker-compose -f docker-compose-build.yaml up
+    - name: Add book folder
+      run: git add book -f
+    - name: Configure Github Config
+      run: |
+        git config --global user.email 'github-actions[bot]@users.noreply.github.com' 
+        git config --global user.name 'github-actions[bot]'
+    - name: Create Commit
+      run: git commit -m "Update Github Pages"
+    - name: Push Commit
+      run: git push
