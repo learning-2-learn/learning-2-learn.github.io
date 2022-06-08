@@ -18,8 +18,8 @@ jobs:
     - name: Add book folder
       run: git add book -f
     - name: Configure Github Config
-      run: gt config --global user.email 'github-actions[bot]@users.noreply.github.com'
-      run: git config --global user.name 'github-actions[bot]'
+      run: git config --global user.email 'github-actions[bot]@users.noreply.github.com' | 
+      git config --global user.name 'github-actions[bot]'
     - name: Create Commit
       run: git commit -m "Update Github Pages"
     - name: Push Commit
