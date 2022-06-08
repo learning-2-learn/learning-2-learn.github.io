@@ -1,7 +1,7 @@
 version: '3.9'
 services:
-  dev:
-    build: .
+  build:
+    image: walkerlab/mdbook-base
     volumes:
       - ./:/src # Mount local source code into the contianer
     command: mdbook build
