@@ -15,8 +15,9 @@ jobs:
       uses: actions/checkout@v3
     - name: Run Build Docker Compose
       run: docker-compose -f docker-compose-build.yaml up
-    - name: checkout
-      run: git checkout pages
+    - uses: actions/checkout@v3
+      with:
+        ref: my-branch
     - name: Add book folder
       run: git add books -f
     - name: Create Commit
