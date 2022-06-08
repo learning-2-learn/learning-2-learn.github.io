@@ -1,0 +1,8 @@
+version: '3.9'
+services:
+  dev:
+    build: .
+    volumes:
+      - ./:/src # Mount local source code into the contianer
+      - ~/.ssh:/root/.ssh # For github auth usage
+    command: sleep infinity
