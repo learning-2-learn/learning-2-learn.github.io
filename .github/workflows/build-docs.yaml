@@ -22,6 +22,6 @@ jobs:
         git config --global user.email 'github-actions[bot]@users.noreply.github.com' 
         git config --global user.name 'github-actions[bot]'
     - name: Create Commit
-      run: git commit -m "Update Github Pages"
+      run: git diff-index --quiet HEAD || git commit -m "Update Github Pages"
     - name: Push Commit
       run: git push
