@@ -5,4 +5,6 @@ services:
     volumes:
       - ./:/src # Mount local source code into the contianer
       - ~/.ssh:/root/.ssh # For github auth usage
-    command: sleep infinity
+    ports:
+    - 3000:3000 # Default md serve
+    command: mdbook serve -n 0.0.0.0
