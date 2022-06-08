@@ -3,9 +3,6 @@ on:
   push:
     branches:
       - main
-  pull_request:
-    branches:
-    - main
 jobs:
   docker_md_build:
     timeout-minutes: 10
