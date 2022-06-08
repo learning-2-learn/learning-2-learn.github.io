@@ -56,3 +56,4 @@ Wideband signals are used to generate LFP and spikes
     - First rule is always the same–always Ripple, after each block, rule is chosen randomly. The balance between the intra- and extra-dimensional changes is maintained. 
 
 
+test stinrg
