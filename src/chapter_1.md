@@ -54,6 +54,3 @@ Wideband signals are used to generate LFP and spikes
     - Item position in the behavioral table is the center of the item in visual angles on the behavior screen
     - Extradimensional rule changes indicate that the monkey could be perseverating. Perseveration indicates when the monkey makes a choice but the choice overlaps with the previous rule
     - First rule is always the same–always Ripple, after each block, rule is chosen randomly. The balance between the intra- and extra-dimensional changes is maintained. 
-
-
-test stinrg
