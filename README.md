@@ -25,7 +25,7 @@ docker compose down
 # Building Docs
 Run the following docker compose command to build the documentation website under the folder name books which will be untracked by default and should not be committed:
 ```
-docker composee -f docker-compose-build.yaml
+docker compose -f docker-compose-build.yaml up
 ```
 
 # Publishing it to GitHub Pages
