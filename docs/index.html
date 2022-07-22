@@ -81,7 +81,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="chapter_1.html"><strong aria-hidden="true">1.</strong> Chapter 1: Task Overview</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="chapter_1-1.html"><strong aria-hidden="true">1.1.</strong> Wisconsin Card Sorting Task</a></li><li class="chapter-item expanded "><a href="chapter_1-2.html"><strong aria-hidden="true">1.2.</strong> Visual Association Task</a></li></ol></li><li class="chapter-item expanded "><a href="chapter_2.html"><strong aria-hidden="true">2.</strong> Chapter 2: Data Overview</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="chapter_2-1.html"><strong aria-hidden="true">2.1.</strong> Neural Data</a></li><li class="chapter-item expanded "><a href="chapter_2-2.html"><strong aria-hidden="true">2.2.</strong> Behavioral Data</a></li><li class="chapter-item expanded "><a href="chapter_2-3.html"><strong aria-hidden="true">2.3.</strong> Eye-Tracking Data</a></li></ol></li><li class="chapter-item expanded "><a href="chapter_3.html"><strong aria-hidden="true">3.</strong> Chapter 3: Computing Environment</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="chapter_3-1.html"><strong aria-hidden="true">3.1.</strong> learning-2-learn GitHub</a></li><li class="chapter-item expanded "><a href="chapter_3-2.html"><strong aria-hidden="true">3.2.</strong> Amazon S3 Bucket</a></li><li class="chapter-item expanded "><a href="chapter_3-3.html"><strong aria-hidden="true">3.3.</strong> JupyterHub</a></li><li class="chapter-item expanded "><a href="chapter_3-4.html"><strong aria-hidden="true">3.4.</strong> DASK</a></li><li class="chapter-item expanded "><a href="chapter_3-5.html"><strong aria-hidden="true">3.5.</strong> Development Environment and Best Practices</a></li></ol></li><li class="chapter-item expanded "><a href="chapter_4.html"><strong aria-hidden="true">4.</strong> Chapter 4: Analysis</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="chapter_4-1.html"><strong aria-hidden="true">4.1.</strong> LFP Analysis</a></li><li class="chapter-item expanded "><a href="chapter_4-2.html"><strong aria-hidden="true">4.2.</strong> Models of Behavior</a></li></ol></li><li class="chapter-item expanded "><a href="chapter_5.html"><strong aria-hidden="true">5.</strong> Chapter 5: Miscellaneous and Links to Resources</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="TaskOverview.html"><strong aria-hidden="true">1.</strong> Chapter 1: Task Overview</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="WisconsinCardSortingTask.html"><strong aria-hidden="true">1.1.</strong> Wisconsin Card Sorting Task</a></li><li class="chapter-item expanded "><a href="VisualAssociationTask.html"><strong aria-hidden="true">1.2.</strong> Visual Association Task</a></li></ol></li><li class="chapter-item expanded "><a href="DataOverview.html"><strong aria-hidden="true">2.</strong> Chapter 2: Data Overview</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="NeuralData.html"><strong aria-hidden="true">2.1.</strong> Neural Data</a></li><li class="chapter-item expanded "><a href="BehavioralData.html"><strong aria-hidden="true">2.2.</strong> Behavioral Data</a></li><li class="chapter-item expanded "><a href="EyeTrackingData.html"><strong aria-hidden="true">2.3.</strong> Eye-Tracking Data</a></li></ol></li><li class="chapter-item expanded "><a href="ComputingEnvironment.html"><strong aria-hidden="true">3.</strong> Chapter 3: Computing Environment</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="l2lGithub.html"><strong aria-hidden="true">3.1.</strong> learning-2-learn GitHub</a></li><li class="chapter-item expanded "><a href="AmazonS3.html"><strong aria-hidden="true">3.2.</strong> Amazon S3 Bucket</a></li><li class="chapter-item expanded "><a href="JupyterHub.html"><strong aria-hidden="true">3.3.</strong> JupyterHub</a></li><li class="chapter-item expanded "><a href="DASK.html"><strong aria-hidden="true">3.4.</strong> DASK</a></li><li class="chapter-item expanded "><a href="DevelopmentEnvironmentAndBestPractices.html"><strong aria-hidden="true">3.5.</strong> Development Environment and Best Practices</a></li></ol></li><li class="chapter-item expanded "><a href="Analysis.html"><strong aria-hidden="true">4.</strong> Chapter 4: Analysis</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="LFPAnalysis.html"><strong aria-hidden="true">4.1.</strong> LFP Analysis</a></li><li class="chapter-item expanded "><a href="ModelsOfBehavior.html"><strong aria-hidden="true">4.2.</strong> Models of Behavior</a></li></ol></li><li class="chapter-item expanded "><a href="Miscellaneous.html"><strong aria-hidden="true">5.</strong> Chapter 5: Miscellaneous and Links to Resources</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -142,14 +142,92 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="chapter-1-task-overview"><a class="header" href="#chapter-1-task-overview">Chapter 1: Task Overview</a></h1>
+                        <h1 id="wisconsin-card-sorting-task"><a class="header" href="#wisconsin-card-sorting-task">Wisconsin Card Sorting Task</a></h1>
+<p>Meant to test working memory and executive function</p>
+<h2 id="task-description"><a class="header" href="#task-description">Task Description</a></h2>
+<ul>
+<li>Task Parameters:
+<ul>
+<li>4 items per trial</li>
+<li>12 dimensions divided in 3 groups: (shape, texture, color)</li>
+<li>Monkey chooses by fixating on an item for 800 ms</li>
+<li>After consistent success on a rule, the rule changes with no indication to the monkey that the rule has changed. Criterion is 8 correct trials in a row or 16/20 running average</li>
+</ul>
+</li>
+<li>Task Timing and Details
+<ul>
+<li>Fixation cross turns on and the monkey needs to fixate for 500ms, choice is self-paced up to 4000 ms, 800ms fixation indicates choice, correct reward is 1500ms, incorrect time out is 5000 ms. Inter-trial interval is 400 ms</li>
+<li>Reward is slurry of monkey chow–banana mixed with apple sauce</li>
+<li>Reward is 7 pulses every 200 ms for 1400-1500 ms. First pulse starts immediately after the 800 ms fixation period. There is a beep with each pulse. Incorrect trials have no auditory feedback, there is just a 5000 ms time out 
+800 ms fixation point isn’t the same spot–she needs to stay in the object for 800ms, but can have multiple fixation points on the item</li>
+<li>Objects are randomly scattered on each trial with a guarantee of no overlap in the bounding box. Windows are all squares regardless of the shape of the item</li>
+<li>During feedback, monkeys see a blank screen–all cards disappear</li>
+</ul>
+</li>
+</ul>
+<h2 id="data-streams"><a class="header" href="#data-streams">Data Streams</a></h2>
+<ul>
+<li>Subject Info: 9-year old female Rhesus macaque</li>
+<li>Eye tracking data:
+<ul>
+<li>Infrared eye tracker recording eye movements (probably PhaseSpace?)</li>
+<li>Pupil tracking has position and diameter, but not sure if the stimuli are all brightness matched</li>
+</ul>
+</li>
+<li>Neural data:
+<img src="GrayMatter_Sam.png" alt="gray-matter" />
+<ul>
+<li>Microdrive with 100um independently moveable microwires</li>
+<li>Two chambers, 124 electrodes in temporal areas, and 96 in prefrontal areas </li>
+<li>Lower drive, puncture dura in each location, and then lower drive in each location. Each rotation is 125microns–many rotations of the screwdriver. This is not done during the surgery. Prior to each recording, some small subset of electrodes are chosen to advance a bit further each day. </li>
+<li>Each recording day has the number of screw driver turns for each channel and we can use that to determine the advancement of each electrode into the brain</li>
+<li>220 channels, but not all of the channels were necessarily advanced in to the brain or some were dead </li>
+<li>Electrodes were advanced by area of interest and signal quality. We can look at recording locations overlaid on the monkey’s MRI and see if they were in cell-dense areas/layers</li>
+<li>Interelectrode spacing is 150 microns</li>
+<li>Electrodes stay in the brain, so unless the microdrive is pushed deeper, then the population of neurons should be similar</li>
+<li>Sam had a lot of bone growth in the craniotomy, particularly for the frontal drive. There was calcification or granulation tissue, which might make the reconstruction of Sam’s electrode tracts difficult, and there was compression under the bone growth</li>
+<li>Sam might have done a couple other tasks before this task. They probably weren’t as involved as this task </li>
+<li>Started the recordings from June 2018, and had been training on the task since January 2018</li>
+<li>This was the first time she was implanted for this purpose</li>
+<li>Neuralynx recording system, recorded a 30 kHz signal from each microwire and integrated behavioral events and eye signal–temporal alignment of all signals
+Wideband signals are used to generate LFP and spikes</li>
+<li>Spikes:
+<ul>
+<li>Obtained by high pass filter of 400 Hz</li>
+<li>Threshold of 3.5 standard deviations below mean used to trigger spike waveform capture</li>
+<li>Redraw spike window to be 8 timestamps before and 24 timestamps after the trough of each detected spike, with additional artifact rejection occurring before sorting</li>
+<li>Some manual sorting using offline sorter, the rest were put through automated sorting–MountainSort algorithm. Uses template-based kilosort and IsoSplit sorting of MountainSort. This spits out a unit assignment for each spike and a noise cluster. These are run on individual electrodes, there’s simultaneous spikes that are compared across channels, but the threshold is about ⅔ of electrodes–more to catch artifacts</li>
+<li>There’s a final curation step where all waveforms are pulled into OfflineSorter and then that is uploaded into the final version on S3 </li>
+<li>File names with ‘a’ designate anterior drive </li>
+<li>110 recordings worth</li>
+<li>Units peaked at about 60 per session, and then dropped to 20 or so per session by the end of the experiment</li>
+</ul>
+</li>
+<li>LFP:
+<ul>
+<li>Target frequency of 1000 Hz is achieved by applying anti-aliasing and lowpass filter of 500 Hz, then downsampling</li>
+<li>60 Hz line noise is NOT removed at this stage</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Behavior:
+<ul>
+<li>Original file–left column is timestamp, right column is code. The code is trial start, etc. (23, 25, 27, 29) represent items appearing on the screen. Repeat of one of those (item 0 is the correct one in each trial and is represented by 23) is when the monkey’s gaze enters that item’s bounding box. </li>
+<li>Eye data also exist, but the raw data uploaded onto S3 has not been calibrated</li>
+<li>Item position in the behavioral table is the center of the item in visual angles on the behavior screen</li>
+<li>Extradimensional rule changes indicate that the monkey could be perseverating. Perseveration indicates when the monkey makes a choice but the choice overlaps with the previous rule</li>
+<li>First rule is always the same–always Ripple, after each block, rule is chosen randomly. The balance between the intra- and extra-dimensional changes is maintained. </li>
+</ul>
+</li>
+</ul>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
 
-                            <a rel="next" href="chapter_1-1.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="WisconsinCardSortingTask.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -160,7 +238,7 @@
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
 
-                    <a rel="next" href="chapter_1-1.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="WisconsinCardSortingTask.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
